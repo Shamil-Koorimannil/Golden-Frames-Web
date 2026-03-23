@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Frames Events | Premium Wedding & Event Planners</title>
+    <meta name="description"
+        content="Golden Frames Events: Premium luxury event and wedding planners in Kerala. We meticulously orchestrate bespoke weddings and luxury events to perfection.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Inline styles for page-specific elements to keep it clean, though we moved mostly to style.css -->
+    <style>
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            min-height: 500px;
+            background-image: linear-gradient(var(--color-overlay), var(--color-overlay)),
+                url('./Image/Stage\ 1.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+            animation: fadeUp 1s ease-out 0.3s backwards;
+        }
+
+        .hero-content .btn {
+            animation: fadeUp 1s ease-out 0.6s backwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ABOUT PREVIEW */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 4px;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--color-accent);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        /* SERVICES PREVIEW */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .service-card {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: transform var(--trans-fast), box-shadow var(--trans-fast);
+            border-radius: 4px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        /* CATEGORIES PREVIEW */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-sm);
+        }
+
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 3/4;
+            transform: translateZ(0);
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--trans-slow);
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 50%);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--spacing-sm);
+        }
+
+        .category-overlay h3 {
+            color: var(--color-white);
+            margin-bottom: 0;
+            font-size: 1.2rem;
+        }
+
+        /* PORTFOLIO PREVIEW */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-sm);
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            border-radius: 4px;
+            transform: translateZ(0);
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--trans-slow);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* WHY US PREVIEW */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            margin: var(--spacing-xs) 0;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .cta-section h2 {
+            color: var(--color-white);
+        }
+
+        .cta-section h2::after {
+            display: none;
+        }
+
+        /* COMPACT LOCATION */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            background: var(--color-white);
+            box-shadow: var(--shadow-light);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border: none;
+        }
+
+        .location-details {
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .location-details h3 {
+            margin-bottom: 1rem;
+        }
+
+        .location-item {
+            margin-bottom: 1rem;
+        }
+
+        .location-item strong {
+            display: block;
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 20px;
+
+        }
+
+        /* Responsive overrides */
+        @media (max-width: 768px) {
+
+            .about-grid,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image::before {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER (Shared completely) ================= -->
+    <custom-navbar></custom-navbar>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Golden Frames Events</h1>
+            <p>From bespoke weddings to premium corporate events, we transform your cherished moments into breathtaking luxury experiences.</p>
+            <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT PREVIEW ================= -->
+    <section class="section-padding fade-up">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="./Image/Reveal 3.jpeg"
+                        alt="Elegant wedding table setting">
+                </div>
+                <div class="about-text">
+                    <span class="section-subtitle">Our Vision</span>
+                    <h2>Where Elegance Meets Imagination</h2>
+                    <p>At Golden Frames Events, we believe every milestone deserves a setting as unique as the people
+                        celebrating it. As top luxury event planners, our dedicated team meticulously orchestrates every
+                        detail—from awe-inspiring floral architectures for destination weddings to flawless premium corporate events. We don't just
+                        plan bespoke events; we curate emotions, ensuring your special day transcends expectations and becomes a timeless legacy.</p>
+                    <br>
+                    <a href="about.html" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CATEGORIES PREVIEW ================= -->
+    <section class="section-padding bg-alt fade-up">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Event Types</span>
+                <h2>Our Specialties</h2>
+            </div>
+            <div class="categories-grid mb-4">
+                <a href="events.html" class="category-card">
+                    <img src="./Image/Stage 11.jpeg"
+                        alt="Theme Wedding">
+                    <div class="category-overlay">
+                        <h3>Theme Weddings</h3>
+                    </div>
+                </a>
+                <a href="events.html" class="category-card">
+                    <img src="./Image/opening 1.jpeg"
+                        alt="Destination Wedding">
+                    <div class="category-overlay">
+                        <h3>Destination Weddings</h3>
+                    </div>
+                </a>
+                <a href="events.html" class="category-card">
+                    <img src="./Image/Stage 7.jpeg"
+                        alt="Premium Wedding">
+                    <div class="category-overlay">
+                        <h3>Premium Weddings</h3>
+                    </div>
+                </a>
+                <a href="events.html" class="category-card">
+                    <img src="./Image/dining 2.jpeg"
+                        alt="Beach Wedding">
+                    <div class="category-overlay">
+                        <h3>Beach Weddings</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="events.html" class="btn btn-outline">Explore All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICES PREVIEW ================= -->
+    <section class="section-padding fade-up">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">What We Do</span>
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💍</div>
+                    <h3>Wedding Planning</h3>
+                    <p>A luxury, full-service approach guiding your bespoke wedding gracefully from the initial vision to the magical farewell.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Venue Management</h3>
+                    <p>Exclusive access to the world's most breathtaking estates, historic chateaus, and hidden luxury
+                        oases.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Decoration & Styling</h3>
+                    <p>Immersive floral installations and visionary aesthetics crafted to define the mood of your elite
+                        gathering.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="services.html" class="btn btn-outline">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PORTFOLIO PREVIEW ================= -->
+    <section class="section-padding bg-alt fade-up">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Our Work</span>
+                <h2>Featured Gallery</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="./Image/dining 1.jpeg"
+                        alt="Wedding ceremony setup">
+                </div>
+                <div class="portfolio-item">
+                    <img src="./Image/Stage 4.jpeg"
+                        alt="Wedding reception decor">
+                </div>
+                <div class="portfolio-item">
+                    <img src="./Image/Reveal 4.jpeg"
+                        alt="Floral arrangements">
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="portfolio.html" class="btn btn-outline">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="section-padding fade-up">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">The Golden Frames Difference</span>
+                <h2>Why Choose Us</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="service-icon">⭐</div>
+                    <h3>Personalized Planning</h3>
+                    <p>Your unique narrative woven into every thread of the celebration's fabric.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="service-icon">🤝</div>
+                    <h3>Experienced Team</h3>
+                    <p>A curated collective of artisans, top-tier designers, and logistics experts.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="service-icon">🎨</div>
+                    <h3>End-to-End Service</h3>
+                    <p>Total peace of mind through discrete, flawless, white-glove execution.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="service-icon">⏱️</div>
+                    <h3>Budget Flexibility</h3>
+                    <p>Masterful orchestration of resources to maximize opulence and value.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="why-us.html" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+    <section class="cta-section fade-up">
+        <div class="container">
+            <h2>Begin Your Legacy of Celebration with Golden Frames Events</h2>
+            <p style="color: #ccc; margin-bottom: 2rem;">Schedule an exclusive consultation with our premium event planners and
+                start breathing life into your luxury vision.</p>
+            <a href="contact.html" class="btn btn-primary"
+                style="background-color: var(--color-white); color: var(--color-primary);">Book Consultation</a>
+        </div>
+    </section>
+
+    <!-- ================= LOCATION (COMPACT) ================= -->
+    <section class="section-padding bg-alt fade-up">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Find Us</span>
+                <h2>Our Location</h2>
+            </div>
+            <div class="location-grid">
+                <div class="location-map">
+                    <!-- Google Maps iframe -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.624113741085!2d76.18062697488574!3d10.991718689170389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cbdc6d538d63%3A0x6659c1db84fe0715!2sGolden%20Frames%20Event%20Managment.LLP!5e0!3m2!1sen!2sin!4v1773884477162!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="location-details">
+                    <h3>We'd love to hear from you.</h3>
+                    <div class="location-item">
+                        <strong>Address</strong>
+                        <p>NH-966, Malappuram - Perinthalmanna Rd, Tirurkad, Perinthalmanna, Malappuram, Kerala 679321</p>
+                    </div>
+                    <div class="location-item">
+                        <strong>Phone</strong>
+                        <p>08547157785</p>
+                    </div>
+                    <div class="location-item">
+                        <strong>Email</strong>
+                        <p>goldenframesevents@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER (Shared completely) ================= -->
+    <custom-footer></custom-footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

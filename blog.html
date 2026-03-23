@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Golden Frames Events</title>
+    <meta name="description" content="Golden Frames Events: Discover event planning tips, bespoke weddings, premium corporate events, and luxury wedding trends.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-header {
+            background-color: var(--color-bg-alt);
+            padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            color: var(--color-primary);
+            margin-bottom: 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .blog-card {
+            background: var(--color-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: transform var(--trans-fast), box-shadow var(--trans-fast);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: var(--spacing-md);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-meta span.category {
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card h3 a {
+            color: var(--color-primary);
+        }
+        
+        .blog-card h3 a:hover {
+            color: var(--color-accent);
+        }
+
+        .blog-card p {
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .blog-read-more {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .blog-read-more::after {
+            content: "→";
+            margin-left: 5px;
+            transition: transform var(--trans-fast);
+        }
+
+        .blog-card:hover .blog-read-more::after {
+            transform: translateX(5px);
+            color: var(--color-accent);
+        }
+        
+        .blog-card:hover .blog-read-more {
+            color: var(--color-accent);
+        }
+
+        /* Pagination Mockup */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: var(--spacing-xl);
+        }
+
+        .page-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 1px solid var(--color-border);
+            transition: all var(--trans-fast);
+        }
+
+        .page-num:hover, .page-num.active {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            border-color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= HEADER (Shared completely) ================= -->
+    <custom-navbar solid></custom-navbar>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <section class="page-header fade-up">
+        <div class="container">
+            <h1>Our Journal</h1>
+            <span class="section-subtitle" style="margin-top: 1rem;">Insights & Inspiration</span>
+        </div>
+    </section>
+
+    <!-- ================= BLOG CONTENT ================= -->
+    <section class="section-padding fade-up">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-card fade-up">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" alt="Top 5 Trends for Luxury Weddings in 2024" class="blog-card-image">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="category">Weddings</span>
+                            <span class="date">Oct 12, 2024</span>
+                        </div>
+                        <h3><a href="#">Top 5 Trends for Luxury Weddings in 2024</a></h3>
+                        <p>From immersive floral ceilings to interactive culinary stations, discover the the top elements defining high-end celebrations this season.</p>
+                        <div>
+                            <a href="#" class="blog-read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card fade-up">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=1974&auto=format&fit=crop" alt="Guide to Planning the Perfect Destination Wedding" class="blog-card-image">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="category">Destination</span>
+                            <span class="date">Sep 28, 2024</span>
+                        </div>
+                        <h3><a href="#">Guide to Planning the Perfect Destination Wedding</a></h3>
+                        <p>Logistics, timelines, and guest experiences. Everything you need to know before you say "I do" in a faraway paradise.</p>
+                        <div>
+                            <a href="#" class="blog-read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card fade-up">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop" alt="Choosing the Right Color Palette for Your Event Details" class="blog-card-image">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="category">Styling</span>
+                            <span class="date">Sep 15, 2024</span>
+                        </div>
+                        <h3><a href="#">Choosing the Right Color Palette for Your Event</a></h3>
+                        <p>How combining soft neutrals with bold accents can elevate your decor and define the entire mood of your gathering.</p>
+                        <div>
+                            <a href="#" class="blog-read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card fade-up">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop" alt="How to host a memorable corporate gala" class="blog-card-image">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="category">Corporate</span>
+                            <span class="date">Aug 30, 2024</span>
+                        </div>
+                        <h3><a href="#">How to Host a Memorable Corporate Gala</a></h3>
+                        <p>Move beyond standard ballrooms. Learn how branded experiences and curated entertainment leave lasting impacts on your stakeholders.</p>
+                        <div>
+                            <a href="#" class="blog-read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card fade-up">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" alt="The Art of Tablescaping" class="blog-card-image">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="category">Styling</span>
+                            <span class="date">Aug 12, 2024</span>
+                        </div>
+                        <h3><a href="#">The Art of The Perfect Tablescape</a></h3>
+                        <p>Detailing the anatomy of a luxury dining table layout, from charger plates and crystal glassware to low centerpiece arrangements.</p>
+                        <div>
+                            <a href="#" class="blog-read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card fade-up">
+                    <a href="#">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop" alt="Why You Need a Professional Event Planner" class="blog-card-image">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="category">Planning</span>
+                            <span class="date">Jul 22, 2024</span>
+                        </div>
+                        <h3><a href="#">Why You Need a Professional Event Planner</a></h3>
+                        <p>It's not just about saving time. Here's how expert industry relationships and contingency planning save you stress and money.</p>
+                        <div>
+                            <a href="#" class="blog-read-more">Read Article</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination Mockup -->
+            <div class="pagination fade-up">
+                <a href="#" class="page-num" aria-label="Previous">&laquo;</a>
+                <a href="#" class="page-num active">1</a>
+                <a href="#" class="page-num">2</a>
+                <a href="#" class="page-num">3</a>
+                <a href="#" class="page-num" aria-label="Next">&raquo;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= FOOTER (Shared completely) ================= -->
+    <custom-footer></custom-footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

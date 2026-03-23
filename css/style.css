@@ -1,0 +1,539 @@
+/* =========================================================================
+   GLOBAL VARIABLES & DESIGN SYSTEM
+   ========================================================================= */
+:root {
+  /* Colors */
+  --color-primary: #1a1a1a;
+  --color-secondary: #4a4a4a;
+  --color-accent: #C7A34E;
+  /* Luxury Gold */
+  --color-bg-light: #f5f3ef;
+  --color-bg-alt: #f5f3ef;
+  /* Light beige */
+  --color-white: #ffffff;
+  --color-border: #e6e6e6;
+  --color-overlay: rgba(0, 0, 0, 0.4);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 5rem;
+  --spacing-xl: 8rem;
+
+  /* Transitions */
+  --trans-fast: 0.3s ease;
+  --trans-slow: 0.5s ease;
+
+  /* Shadows */
+  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================================
+   BASE STYLES & RESET
+   ========================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-secondary);
+  background-color: var(--color-bg-light);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 400;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--trans-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================================
+   UTILITY CLASSES
+   ========================================================================= */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.section-padding {
+  padding: var(--spacing-xl) 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-alt {
+  background-color: var(--color-bg-alt);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: var(--spacing-sm);
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.section-subtitle {
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+/* Scroll Animations */
+.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================================
+   HEADER & NAVBAR
+   ========================================================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all var(--trans-fast);
+  padding: var(--spacing-sm) 0;
+  background-color: transparent;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-hover);
+  padding: 15px 0;
+}
+
+/* Navigation links will default to white on transparent backgrounds */
+.header:not(.scrolled) .nav-link,
+.header:not(.scrolled) .logo-text {
+  color: var(--color-white);
+}
+
+/* Scrolled state changing colors to accent */
+.header.scrolled .nav-link,
+.header.scrolled .logo-text {
+  color: var(--color-accent);
+}
+
+
+/* For pages without a dark hero image under the nav (like inner pages),
+   we should force a solid background immediately or change link colors.
+   We'll use a class .header-solid for inner pages */
+.header.header-solid {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  padding: 15px 0;
+}
+
+.header.header-solid .nav-link,
+.header.header-solid .logo-text {
+  color: var(--color-primary);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  /* Above mobile menu */
+}
+
+.logo-image {
+  height: 80px;
+  width: auto;
+  margin-right: 12px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  /* Default solid color, overridden above */
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  /* Default solid color, overridden above */
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--trans-fast), background-color var(--trans-fast);
+}
+
+.nav-link:hover,
+.header.scrolled .nav-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-accent);
+}
+
+.header:not(.scrolled):not(.header-solid) .nav-link.active {
+  color: var(--color-accent);
+  /* Override the white state if active on home */
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin: 5px 0;
+  transition: all var(--trans-fast);
+  pointer-events: none;
+}
+
+.header:not(.scrolled):not(.header-solid) .hamburger span {
+  background-color: var(--color-white);
+}
+
+.header.scrolled .hamburger span {
+  background-color: var(--color-accent);
+}
+
+/* Hamburger Animation */
+.hamburger.active span {
+  background-color: var(--color-primary) !important;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  /* Always dark when menu open */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-xl) 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-col h3 {
+  color: var(--color-white);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.footer-col p {
+  color: #a0a0a0;
+  margin-bottom: 1rem;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #a0a0a0;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #4a4a4a;
+  border-radius: 50%;
+  color: var(--color-white);
+  transition: all var(--trans-fast);
+}
+
+.social-links a:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+/* =========================================================================
+   FLOATING WHATSAPP BUTTON
+   ========================================================================= */
+.floating-wa {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: transform var(--trans-fast), background-color var(--trans-fast), box-shadow var(--trans-fast);
+  text-decoration: none;
+}
+
+.floating-wa:hover {
+  background-color: #128c7e;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  color: #fff;
+}
+
+/* =========================================================================
+   MOBILE RESPONSIVENESS (Global)
+   ========================================================================= */
+@media (max-width: 991px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--color-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Ensure menu stays above content */
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu .nav-link {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 4rem;
+    --spacing-lg: 3rem;
+  }
+
+  .section-padding {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .floating-wa {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+}

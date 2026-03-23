@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Golden Frames Events</title>
+    <meta name="description"
+        content="Learn about Golden Frames Events, the premium event management and luxury wedding planners in Kerala.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .page-header {
+            background-color: var(--color-bg-alt);
+            padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-lg);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--color-primary);
+            margin-bottom: 0;
+        }
+
+        .about-full-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .about-full-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-full-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 250px;
+            max-width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1rem auto;
+            box-shadow: var(--shadow-light);
+            display: block;
+        }
+
+        .team-member h3 {
+            margin-bottom: 0.2rem;
+            font-size: 1.2rem;
+        }
+
+        .team-member p {
+            color: var(--color-accent);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-full-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER (Shared completely) ================= -->
+    <!-- Note: Adding header-solid class since page-header isn't a dark bg image -->
+    <custom-navbar solid></custom-navbar>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <section class="page-header fade-up">
+        <div class="container">
+            <h1>About Us</h1>
+            <span class="section-subtitle" style="margin-top: 1rem;">Our Story</span>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT CONTENT ================= -->
+    <section class="section-padding fade-up">
+        <div class="container">
+            <div class="about-full-grid">
+                <div class="about-full-text">
+                    <h2>Curators of Exceptional Experiences</h2>
+                    <p>Born from an unyielding passion for design and an obsession with detail, Golden Frames Events has
+                        ascended to the pinnacle of luxury event management. As top event planners, we craft narratives
+                        of romance, celebration, and success across Kerala's most breathtaking landscapes, planning
+                        bespoke weddings and premium corporate events at the world's most exclusive destinations.</p>
+                    <p>Our philosophy is deeply rooted in personal connection. We immerse ourselves in your
+                        vision—understanding your aesthetic, your heritage, and your dreams. Through a seamless blend of
+                        visionary artistry and razor-sharp logistical precision, we transform blank canvases into
+                        immersive masterworks.</p>
+                    <p>We believe that true luxury lies in the unseen: the flawless transition between acts, the
+                        perfectly timed champagne pour, the lighting that flatters every guest. Our premium wedding
+                        planners afford you the ultimate luxury—the freedom to live entirely in the magic of your
+                        bespoke events.</p>
+                </div>
+                <div class="about-full-image">
+                    <img src="./Image/Reveal 5.jpeg">
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="section-title fade-up" style="margin-top: var(--spacing-xl);">
+                <h2>Meet The Founder</h2>
+            </div>
+            <div class="team-grid fade-up">
+                <div class="team-member">
+                    <img src="Image/althaf.jpeg" alt="Althaf - Golden Frames">
+                    <h3>Althaf</h3>
+                    <p>Founder & Lead Planner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER (Shared completely) ================= -->
+    <custom-footer></custom-footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

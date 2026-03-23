@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Golden Frames Events</title>
+    <meta name="description" content="Golden Frames Events: Discover our comprehensive services as premium luxury event and wedding planners, specializing in bespoke weddings and corporate events.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-header {
+            background-color: var(--color-bg-alt);
+            padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-lg);
+            text-align: center;
+        }
+        .page-header h1 {
+            color: var(--color-primary);
+            margin-bottom: 0;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+
+        .service-detail-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .service-detail-item:nth-child(even) .service-detail-text {
+            order: 2;
+        }
+        .service-detail-item:nth-child(even) .service-detail-image {
+            order: 1;
+        }
+
+        .service-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: var(--shadow-light);
+            aspect-ratio: 4/3;
+        }
+
+        .service-detail-text h2 {
+            margin-bottom: 1rem;
+        }
+
+        .service-detail-text ul {
+            margin-top: 1rem;
+        }
+
+        .service-detail-text ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-detail-text ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail-item {
+                grid-template-columns: 1fr;
+            }
+            .service-detail-item:nth-child(even) .service-detail-text {
+                order: 1;
+            }
+            .service-detail-item:nth-child(even) .service-detail-image {
+                order: 2;
+            }
+        }
+
+        /* Corporate Services Grid */
+        .corporate-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .corporate-intro p {
+            margin-bottom: 1.5rem;
+            color: var(--color-secondary);
+        }
+        
+        .corporate-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: var(--spacing-md);
+        }
+
+        .corporate-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            padding: 2.5rem 1.5rem;
+            text-align: left;
+            transition: var(--trans-fast);
+            box-shadow: var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+        }
+
+        .corporate-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .corporate-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: var(--trans-fast);
+        }
+
+        .corporate-card:hover .corporate-icon {
+            background-color: var(--color-accent);
+        }
+
+        .corporate-icon i {
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            transition: var(--trans-fast);
+        }
+
+        .corporate-card:hover .corporate-icon i {
+            color: var(--color-white);
+        }
+
+        @media (max-width: 1024px) {
+            .corporate-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .corporate-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <custom-navbar solid></custom-navbar>
+
+    <section class="page-header fade-up">
+        <div class="container">
+            <h1>Our Services</h1>
+            <span class="section-subtitle" style="margin-top: 1rem;">Premium Event Planners</span>
+        </div>
+    </section>
+
+    <section class="section-padding fade-up">
+        <div class="container">
+            <div class="service-detail-item fade-up" style="margin-bottom: var(--spacing-lg);">
+                <div class="service-detail-text" style="text-align: left;">
+                    <p>Looking for the best event management company in Malappuram or Kerala? Look no further than our expert team of event organizers who specialize in corporate event management. We’re committed to delivering unforgettable experiences for our clients, whether it’s a conference, product launch, or sports event.</p>
+                    <p>Our corporate event management services include conference management, experiential marketing, dealer meets, entertainment and show management, and product launches. We pride ourselves on being one of the top event management companies in Malappuram and Kerala, with a team of experienced professionals who are dedicated to bringing your vision to life.</p>
+                    <p>At our event company in Malappuram, we understand that each client has unique needs and requirements, which is why we work closely with you to create a customized event strategy that’s tailored to your specific goals. Whether you need us to manage the logistics of a large-scale conference or execute an experiential marketing campaign, we have the expertise and resources to get the job done.</p>
+                    <p>When you work with our event organizers in Malappuram or Kerala, you can trust that every detail will be taken care of, from venue selection to entertainment and show management. We’re committed to delivering seamless, stress-free experiences for our clients, so you can focus on enjoying your event.</p>
+                    <p>Contact us today to learn more about our corporate event management services and how we can help you create a memorable event that will leave a lasting impression.</p>
+                </div>
+                <div class="service-detail-image">
+                    <img src="./Image/Reveal 1.jpeg" alt="Corporate event management in Malappuram">
+                </div>
+            </div>
+            <div class="corporate-grid">
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    Corporate Events
+                </div>
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-solid fa-person-chalkboard"></i>
+                    </div>
+                    Conference Management
+                </div>
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    Experiential Marketing
+                </div>
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    Dealers Meet
+                </div>
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    Entertainment & Show Management
+                </div>
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    Sports Events Management
+                </div>
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    Product Launches
+                </div>
+                <div class="corporate-card fade-up">
+                    <div class="corporate-icon">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    Exhibition Stalls
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-alt fade-up">
+        <div class="container">
+            <div class="services-list">
+                
+                <div class="service-detail-item fade-up">
+                    <div class="service-detail-text">
+                        <h2>Bespoke Wedding Planning</h2>
+                        <p>For the discerning couple seeking absolute perfection without compromise. From breathtaking conceptualization to the final, magical farewell, our premium event planners curate every intricate detail of your luxury destination wedding.</p>
+                        <ul>
+                            <li>Comprehensive budget orchestration</li>
+                            <li>Exclusive venue scouting and selection</li>
+                            <li>Elite vendor sourcing and contract negotiation</li>
+                            <li>Masterful design conceptualization</li>
+                            <li>Flawless on-the-day coordination</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" alt="Full wedding planning setup at a luxury venue">
+                    </div>
+                </div>
+
+                <div class="service-detail-item fade-up">
+                    <div class="service-detail-text">
+                        <h2>Bespoke Decor & Scenography</h2>
+                        <p>Transforming blank canvases into awe-inspiring visual masterworks. Our visionary design team crafts immersive aesthetics—from dramatic floral architectures to custom lighting—that define the ultimate luxury atmosphere.</p>
+                        <ul>
+                            <li>Immersive floral installations</li>
+                            <li>Architectural lighting design</li>
+                            <li>Premium furniture and couture linens</li>
+                            <li>Curated tablescape styling</li>
+                            <li>Bespoke signage and fine stationery</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop" alt="Elegant floral decoration and styling">
+                    </div>
+                </div>
+
+                <div class="service-detail-item fade-up">
+                    <div class="service-detail-text">
+                        <h2>Exclusive Venue Management</h2>
+                        <p>Unlocking the doors to the world’s most coveted and breathtaking locations. We secure and manage elite spaces that provide the perfect, awe-inspiring backdrop for your celebration.</p>
+                        <ul>
+                            <li>Access to historic chateaus and private islands</li>
+                            <li>Comprehensive site logistics and permits</li>
+                            <li>Floorplan optimization and flow design</li>
+                            <li>On-site hospitality management</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop" alt="Exclusive luxury venue">
+                    </div>
+                </div>
+
+                <div class="service-detail-item fade-up">
+                    <div class="service-detail-text">
+                        <h2>Cinematic Photography & Videography</h2>
+                        <p>Capturing the ephemeral magic of your event through an editorial lens. We partner with world-renowned visual artists to document your legacy in breathtaking, high-fashion imagery.</p>
+                        <ul>
+                            <li>Editorial-style photography</li>
+                            <li>Cinematic short films and documentaries</li>
+                            <li>Drone and aerial coverage</li>
+                            <li>Same-day edit productions</li>
+                            <li>Luxury heirloom albums</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="https://images.unsplash.com/photo-1460364157752-9265554dea71?q=80&w=2070&auto=format&fit=crop" alt="Cinematic wedding photography">
+                    </div>
+                </div>
+
+                <div class="service-detail-item fade-up">
+                    <div class="service-detail-text">
+                        <h2>Curated Entertainment</h2>
+                        <p>Elevating the guest experience with world-class performances. From symphony orchestras during dinner to international DJs keeping the dance floor alive, we curate unforgettable auditory and visual spectacles.</p>
+                        <ul>
+                            <li>International live bands and orchestras</li>
+                            <li>Celebrity performers and DJs</li>
+                            <li>Interactive immersive acts</li>
+                            <li>Customized choreographies</li>
+                            <li>Theatrical lighting and pyrotechnics</li>
+                        </ul>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" alt="Live entertainment at luxury event">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

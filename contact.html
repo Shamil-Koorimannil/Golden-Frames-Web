@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Golden Frames Events</title>
+    <meta name="description" content="Golden Frames Events: Get in touch to book a consultation for your bespoke wedding or premium luxury event with top event planners in Kerala.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .contact-hero {
+            background-image: linear-gradient(var(--color-overlay), var(--color-overlay)), 
+                              url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: calc(var(--spacing-xl) + 80px) 0 var(--spacing-xl);
+            text-align: center;
+            color: var(--color-white);
+        }
+        
+        .contact-hero h1 {
+            color: var(--color-white);
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: var(--spacing-xl);
+            align-items: flex-start;
+        }
+
+        /* Form Styling */
+        .contact-form-container {
+            background: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--trans-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .form-control.error-input {
+            border-color: red;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button.btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Info Sidebar */
+        .contact-info-list {
+            background: var(--color-bg-alt);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item h4 {
+            color: var(--color-accent);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Full Width Map */
+        .full-map {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-container {
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <custom-navbar></custom-navbar>
+
+    <section class="contact-hero fade-up">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p style="margin-top: 1rem; font-size: 1.2rem;">Let us help you bring your vision to life.</p>
+        </div>
+    </section>
+
+    <section class="section-padding fade-up">
+        <div class="container">
+            <div class="contact-wrapper">
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2 style="margin-bottom: 2rem;">Send a Message</h2>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required placeholder="e.g., Victoria Sterling">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required placeholder="victoria@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" required placeholder="+91 98765 43210">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventType">Event Type</label>
+                            <select id="eventType" class="form-control">
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="social">Social Gathering</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" required placeholder="Tell us about your event details..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-list">
+                    <h3 style="margin-bottom: 2rem;">Get In Touch</h3>
+                     
+                    <div class="info-item">
+                        <h4>Headquarters</h4>
+                        <p>NH-966 <br> Malappuram-Perinthalmanna Rd <br> Tirurkad, Perinthalmanna, Malappuram, Kerala 679321</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Direct Line</h4>
+                        <p>08547157785</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Email Inquiries</h4>
+                        <p>goldenframesevents@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Location Map Section -->
+    <section class="fade-up">
+                            <iframe class="full-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.624113741085!2d76.18062697488574!3d10.991718689170389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cbdc6d538d63%3A0x6659c1db84fe0715!2sGolden%20Frames%20Event%20Managment.LLP!5e0!3m2!1sen!2sin!4v1773884477162!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

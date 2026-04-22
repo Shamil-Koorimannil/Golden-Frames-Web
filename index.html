@@ -78,7 +78,6 @@
         }
 
         .about-image img {
-            border-radius: 4px;
             box-shadow: var(--shadow-hover);
         }
 
@@ -89,9 +88,9 @@
             left: -20px;
             width: 100%;
             height: 100%;
-            border: 2px solid var(--color-accent);
+            border: 2px solid transparent;
+            border-image: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22) 1;
             z-index: -1;
-            border-radius: 4px;
         }
 
         /* SERVICES PREVIEW */
@@ -107,7 +106,6 @@
             text-align: center;
             box-shadow: var(--shadow-light);
             transition: transform var(--trans-fast), box-shadow var(--trans-fast);
-            border-radius: 4px;
         }
 
         .service-card:hover {
@@ -117,7 +115,9 @@
 
         .service-icon {
             font-size: 2.5rem;
-            color: var(--color-accent);
+            background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
         }
 
@@ -131,23 +131,20 @@
         .category-card {
             position: relative;
             overflow: hidden;
-            border-radius: 4px;
             aspect-ratio: 3/4;
             transform: translateZ(0);
-            -webkit-mask-image: -webkit-radial-gradient(white, black);
-            mask-image: radial-gradient(white, black);
         }
 
         .category-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.03);
+            transform: scale(1.06);
             transition: transform var(--trans-slow);
         }
 
         .category-card:hover img {
-            transform: scale(1.13);
+            transform: scale(1.15);
         }
 
         .category-overlay {
@@ -176,22 +173,19 @@
             position: relative;
             overflow: hidden;
             aspect-ratio: 1/1;
-            border-radius: 4px;
             transform: translateZ(0);
-            -webkit-mask-image: -webkit-radial-gradient(white, black);
-            mask-image: radial-gradient(white, black);
         }
 
         .portfolio-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.03);
+            transform: scale(1.06);
             transition: transform var(--trans-slow);
         }
 
         .portfolio-item:hover img {
-            transform: scale(1.08);
+            transform: scale(1.11);
         }
 
         /* WHY US PREVIEW */
@@ -235,7 +229,6 @@
             gap: var(--spacing-md);
             background: var(--color-white);
             box-shadow: var(--shadow-light);
-            border-radius: 8px;
             overflow: hidden;
         }
 
@@ -263,7 +256,9 @@
 
         .location-item strong {
             display: block;
-            color: var(--color-accent);
+            background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;

@@ -5,7 +5,7 @@
   /* Colors */
   --color-primary: #1a1a1a;
   --color-secondary: #4a4a4a;
-  --color-accent: #C7A34E;
+  --color-accent: #C89B3C;
   /* Luxury Gold */
   --color-bg-light: #f5f3ef;
   --color-bg-alt: #f5f3ef;
@@ -147,7 +147,7 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
   color: var(--color-white);
 }
 
@@ -188,11 +188,13 @@ img {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
 }
 
 .section-subtitle {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -243,7 +245,9 @@ img {
 /* Scrolled state changing colors to accent */
 .header.scrolled .nav-link,
 .header.scrolled .logo-text {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -258,7 +262,9 @@ img {
 
 .header.header-solid .nav-link,
 .header.header-solid .logo-text {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-container {
@@ -285,7 +291,9 @@ img {
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   /* Default solid color, overridden above */
   letter-spacing: 1px;
 }
@@ -313,13 +321,15 @@ img {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
   transition: width var(--trans-fast), background-color var(--trans-fast);
 }
 
 .nav-link:hover,
 .header.scrolled .nav-link:hover {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-link:hover::after,
@@ -328,11 +338,15 @@ img {
 }
 
 .nav-link.active {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header:not(.scrolled):not(.header-solid) .nav-link.active {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   /* Override the white state if active on home */
 }
 
@@ -360,7 +374,7 @@ img {
 }
 
 .header.scrolled .hamburger span {
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
 }
 
 /* Hamburger Animation */
@@ -420,7 +434,9 @@ img {
 }
 
 .footer-links a:hover {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding-left: 5px;
 }
 
@@ -443,8 +459,8 @@ img {
 }
 
 .social-links a:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  border-color: transparent;
 }
 
 .footer-bottom {
@@ -527,7 +543,7 @@ img {
 .reviewer-avatar {
   width: 50px;
   height: 50px;
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
   color: var(--color-white);
   border-radius: 50%;
   display: flex;
@@ -693,7 +709,9 @@ img {
   font-family: var(--font-heading);
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -770,7 +788,6 @@ img {
   max-width: 100vw;
   max-height: 90vh;
   object-fit: contain;
-  border-radius: 4px;
 }
 
 .lightbox-close {
@@ -786,5 +803,7 @@ img {
 }
 
 .lightbox-close:hover {
-  color: var(--color-accent);
+  background: linear-gradient(135deg, #E5C76B, #C89B3C, #8A6A22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

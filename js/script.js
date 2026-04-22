@@ -10,7 +10,7 @@ class CustomNavbar extends HTMLElement {
     <header class="${headerClass}">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="./image/Golden logo.png" alt="Golden Frames Logo" class="logo-image">
+                <img src="./Image/Golden logo.png" alt="Golden Frames Logo" class="logo-image">
                 <span class="logo-text">Golden Frames</span>
             </a>
             <button class="hamburger" aria-label="Toggle Navigation">

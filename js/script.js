@@ -25,7 +25,7 @@ class CustomNavbar extends HTMLElement {
                 <a href="events.html" class="nav-link">Events</a>
                 <a href="portfolio.html" class="nav-link">Portfolio</a>
                 <a href="why-us.html" class="nav-link">Why Us</a>
-                <a href="blog.html" class="nav-link">Blog</a>
+                <!-- <a href="blog.html" class="nav-link">Blog</a> -->
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
@@ -43,14 +43,22 @@ class CustomFooter extends HTMLElement {
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>Golden Frames</h3>
-                    <p>Golden Frames Events: Premium wedding and event planners dedicated to creating unforgettable luxury experiences, bespoke weddings, and premium corporate events tailored to your vision.</p>
+                    <p><Strong>Building No./Flat No: </Strong> Room No. 11/233G<br><Strong>Name Of Premises/Building: </Strong> Perayil Building<br><Strong>Road/Street: </Strong> Thirurkkad<br><Strong>City/Town/Village: </Strong>Angadippuram<br><Strong>District: </Strong>Malappuram<br><Strong>State: </Strong>Kerala<br><Strong>Pincode: </Strong>679321<br></p>
 <div class="social-links">
-    <a href="#" aria-label="WhatsApp">
+    <a href="https://wa.me/918547157785" aria-label="WhatsApp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    
-    <a href="https://www.instagram.com/goldenframesevents?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
+    <a href="https://www.instagram.com/goldenframesevents?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank">
         <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/17st2Dfar7/" aria-label="Facebook" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="http://www.youtube.com/@goldenframeseventmanagementLLP" aria-label="YouTube" target="_blank">
+        <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/golden-frames-event-management-llp-4569443ab" aria-label="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
     </a>
 </div>
                 </div>
@@ -94,7 +102,7 @@ customElements.define('custom-footer', CustomFooter);
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Sticky Navbar
   const header = document.querySelector('.header');
-  
+
   const handleScroll = () => {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -104,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Initial check and event listener
-  if(header && !header.classList.contains('header-solid')) {
+  if (header && !header.classList.contains('header-solid')) {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
   }
@@ -117,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
-      
+
       // Prevent body scrolling when menu is open
       if (navMenu.classList.contains('active')) {
         document.body.style.overflow = 'hidden';
@@ -138,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get current page filename
   const currentPagePath = window.location.pathname;
   let currentPage = currentPagePath.split('/').pop() || 'index.html';
-  
+
   // Base case for root path mappings to index.html
   if (currentPage === '' || currentPage === '/') {
     currentPage = 'index.html';
@@ -148,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   navLinks.forEach(link => {
     // Remove active class from all
     link.classList.remove('active');
-    
+
     // Get the href of the link, strip any directories/paths
     const hrefAttr = link.getAttribute('href');
     if (hrefAttr) {
@@ -161,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Scroll Animations (Intersection Observer)
   const fadeUpElements = document.querySelectorAll('.fade-up');
-  
+
   // Fallback safety net: Ensure elements become visible even if they never intersect
   // or if IntersectionObserver is unavailable.
   setTimeout(() => {
@@ -203,27 +211,27 @@ document.addEventListener('DOMContentLoaded', () => {
         <img class="lightbox-img" src="" alt="Lightbox popup document">
       </div>
     `;
-    
+
     document.body.appendChild(lightbox);
-    
+
     const lightboxImg = lightbox.querySelector('.lightbox-img');
     const closeBtn = lightbox.querySelector('.lightbox-close');
 
     portfolioImages.forEach(img => {
       // Make them visually clickable
       img.style.cursor = 'pointer';
-      
+
       // Find the inner img tag or click wrapping anchor
       img.addEventListener('click', (e) => {
         e.preventDefault();
         const innerImg = img.tagName === 'IMG' ? img : (img.querySelector('img') || img);
         const src = innerImg.getAttribute('src');
         const alt = innerImg.getAttribute('alt');
-        if(src) {
-           lightboxImg.src = src;
-           lightboxImg.alt = alt || 'Expanded view';
-           lightbox.classList.add('active');
-           document.body.style.overflow = 'hidden';
+        if (src) {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt || 'Expanded view';
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
         }
       });
     });
@@ -247,12 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Contact Form Validation
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      
+
       let isValid = true;
       const requiredInputs = this.querySelectorAll('[required]');
-      
+
       // Clear previous error messages
       const errorMsgs = this.querySelectorAll('.error-msg');
       errorMsgs.forEach(msg => msg.remove());
@@ -281,15 +289,15 @@ document.addEventListener('DOMContentLoaded', () => {
         let waText = `Hello Golden Frames Events!\n\nI would like to inquire about an event.\n\n*Details:*\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Event Type:* ${eventType}\n\n*Message:*\n${message}`;
 
         const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`;
-        
+
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerText;
         submitBtn.innerText = 'Opening WhatsApp...';
         submitBtn.style.backgroundColor = 'var(--color-primary)';
-        
+
         // Open WhatsApp in a new tab
         window.open(waLink, '_blank');
-        
+
         setTimeout(() => {
           contactForm.reset();
           submitBtn.innerText = originalText;
@@ -307,13 +315,13 @@ document.addEventListener('DOMContentLoaded', () => {
     msgDiv.style.fontSize = '0.8rem';
     msgDiv.style.marginTop = '0.2rem';
     msgDiv.innerText = message;
-    
+
     // Insert after input
     input.parentNode.insertBefore(msgDiv, input.nextSibling);
   }
 
   function validateEmail(email) {
-    const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   }
 
@@ -326,5 +334,51 @@ document.addEventListener('DOMContentLoaded', () => {
   waButton.setAttribute('aria-label', 'Chat with us on WhatsApp');
   waButton.innerHTML = '<i class="fab fa-whatsapp"></i>';
   document.body.appendChild(waButton);
+
+  // 8. Testimonial Slider
+  const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+  if (testimonialSlides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      testimonialSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % testimonialSlides.length;
+      testimonialSlides[currentSlide].classList.add('active');
+    }, 4000);
+  }
+
+  // 9. Number Counter Animation
+  const statsElements = document.querySelectorAll('.stat-number');
+  if (statsElements.length > 0) {
+    const startCounting = (el) => {
+      const target = +el.getAttribute('data-target');
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          el.innerText = Math.ceil(current).toLocaleString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          el.innerText = target.toLocaleString();
+        }
+      };
+      updateCounter();
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounting(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      statsElements.forEach(el => observer.observe(el));
+    } else {
+      statsElements.forEach(el => startCounting(el));
+    }
+  }
 
 });

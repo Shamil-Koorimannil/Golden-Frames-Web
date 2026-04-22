@@ -157,28 +157,72 @@
         <div class="container">
             <div class="section-title">
                 <span class="section-subtitle" style="color:var(--color-bg-alt);">Client Stories</span>
-                <h2>What They Say</h2>
+                <h2>Google Reviews</h2>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem;">
-                <div class="testimonial-card fade-up" style="max-width: 100%;">
-                    <p class="testimonial-text" style="font-size: 1.2rem;">"Golden Frames Events transformed our vague ideas into a spectacular reality. Their attention to detail, professionalism, and the sheer elegance of the decor left all our guests speechless. They truly are the masters of their craft."</p>
-                    <div class="testimonial-author">- Anjali & Vikram Verma</div>
+            <style>
+                .testimonial-slider-wrapper {
+                    position: relative;
+                    width: 100%;
+                    max-width: 800px;
+                    margin: 3rem auto 0;
+                    min-height: 250px;
+                }
+                .testimonial-slide {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 1s ease, visibility 1s;
+                }
+                .testimonial-slide.active {
+                    opacity: 1;
+                    visibility: visible;
+                    position: relative;
+                }
+                .google-stars {
+                    color: #FFB100;
+                    font-size: 1.2rem;
+                    margin-bottom: 1rem;
+                    display: flex;
+                    justify-content: center;
+                    gap: 5px;
+                }
+            </style>
+
+            <div class="testimonial-slider-wrapper">
+                <div class="testimonial-card testimonial-slide active">
+                    <div class="google-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" style="font-size: 1.2rem;">"Golden Frames made our wedding truly exceptional. Their attention to detail and flawless execution left us completely stress-free. The floral decor was magnificent. Highly recommended!"</p>
+                    <div class="testimonial-author">- Sreejith Menon</div>
+                    <div style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;"><i class="fa-brands fa-google"></i> Google Review</div>
                 </div>
-                <div class="testimonial-card fade-up" style="max-width: 100%;">
-                    <p class="testimonial-text" style="font-size: 1.2rem;">"From finding the ultimate heritage venue to the flawless execution on the day, the team provided white-glove service. It was the most stress-free and magical weekend of our lives."</p>
-                    <div class="testimonial-author">- Priya & Rohan Das</div>
+                <div class="testimonial-card testimonial-slide">
+                    <div class="google-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" style="font-size: 1.2rem;">"The best event management team in Malappuram! They perfectly understood our vision for a destination wedding and turned it into an awe-inspiring reality. Excellent service from start to finish."</p>
+                    <div class="testimonial-author">- Anjali Krishna</div>
+                    <div style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;"><i class="fa-brands fa-google"></i> Google Review</div>
                 </div>
-                <div class="testimonial-card fade-up" style="max-width: 100%;">
-                    <p class="testimonial-text" style="font-size: 1.2rem;">"An absolute triumph of design and logistics. They handled international vendors and complex schedules with razor-sharp precision. Our corporate gala has never looked this opulent."</p>
-                    <div class="testimonial-author">- The Zenith Group</div>
+                <div class="testimonial-card testimonial-slide">
+                    <div class="google-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" style="font-size: 1.2rem;">"We hired Golden Frames for a premium corporate event, and they delivered beyond expectation. Very professional team and the stage setup was incredibly luxurious."</p>
+                    <div class="testimonial-author">- Rahul Nambiar</div>
+                    <div style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;"><i class="fa-brands fa-google"></i> Google Review</div>
                 </div>
             </div>
 
             <!-- Google Reviews Button -->
             <div class="fade-up" style="text-align: center; margin-top: 4rem;">
-                <a href="https://share.google/rnVYzB7A1tyLo1tj0" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color: #4285F4; border: 1px solid #4285F4;">
-                    <span style="font-size: 1.2rem;">⭐</span> Read Our Google Reviews
+                <a href="https://www.google.com/search?q=Golden+frames+Event+Managment.LLP+reviews" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color: #4285F4; border: 1px solid #4285F4;">
+                    <span style="font-size: 1.2rem;">⭐</span> Read More on Google
                 </a>
             </div>
         </div>
